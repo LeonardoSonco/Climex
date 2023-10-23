@@ -1,0 +1,65 @@
+.headerContainer{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    margin-top: 35px;
+    align-items: center;
+    
+}
+
+
+.headerNavbar{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  
+}
+
+
+.headerNavbar li{
+    list-style-type: none;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+   
+}
+
+.headerNavbar li:hover{
+    color: blueviolet;
+    font-weight: 700;
+
+
+}
+.headerLogo, .headerSearch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.headerLogo img{
+    width: 250px;
+}
+
+.headerInput{
+    display: flex;
+    position: relative; 
+    align-items: center;
+    height: 25px;
+    
+}
+
+.headerInput input{
+    height: 100%;
+    width: 200px;
+    border-radius: 20px;
+    padding: 3px 35px 3px 10px;
+}
+
+.headerInput img{
+    position: absolute; 
+    top: 5px; 
+    right: 10px;
+    
+    
+}

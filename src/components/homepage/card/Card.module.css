@@ -1,0 +1,38 @@
+.cardConteiner{
+    background-color: rgb(103, 47, 156);
+    width: 200px;
+    border-radius: 30px;
+    height: 250px;
+}
+
+.cardBox{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.cardBox img{
+    width: 120px;
+    margin: 0 auto;
+}
+
+
+
+.cardClimaHour{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+    
+}
+
+.cardBox h2{
+    font-size: 42px;
+    margin:10px 0;
+}
+
+.cardBox p{
+    font-size: 18px;
+    margin: 0;
+}
