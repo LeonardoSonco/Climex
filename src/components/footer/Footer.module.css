@@ -1,0 +1,13 @@
+.subscribe{
+    background-image:
+    linear-gradient(to top,   rgba(255, 255, 255, 0.212),rgba(92, 7, 92, 0.404)),
+    url(../../image/bg/Subscribe.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(white white);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10% 0;
+}
+

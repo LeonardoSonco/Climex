@@ -9,48 +9,48 @@ import CardWeek from "../card/CardWeek";
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default function Semana(props) {
-    const [slidesPerView, setSlidesPerView] = useState(1);
-    const containerRef = useRef(null);
-    
- 
+  const [slidesPerView, setSlidesPerView] = useState(1);
+  const containerRef = useRef(null);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth;
+        const cardWeekWidth = 225; // Largura aproximada de um CardWeek
+        const newSlidesPerView = Math.floor(containerWidth / cardWeekWidth);
+        if (newSlidesPerView !== slidesPerView) {
+          setSlidesPerView(newSlidesPerView);
+        }
+      }
+    };
 
-    useEffect(() => {
-        const handleResize = () => {
-          const containerWidth = containerRef.current.clientWidth;
-          const cardWeekWidth = 250; // Largura aproximada de um CardWeek
-      
-          const newSlidesPerView = Math.floor(containerWidth / cardWeekWidth);
-      
-          if (newSlidesPerView !== slidesPerView) {
-            setSlidesPerView(newSlidesPerView);
-          }
-        };
-        window.addEventListener("resize", handleResize);
+    if (containerRef.current) {
       handleResize();
-  
+      window.addEventListener("resize", handleResize);
+
       return () => {
         window.removeEventListener("resize", handleResize);
       };
-    }, [slidesPerView]);
-  
-    const cardWeeks = Array.from({ length: 7 }, (_, index) => (
-      <SwiperSlide key={index} className="h-screen">
-        <CardWeek dataCityClimaWeek={props.dataCityClimaWeek} index={index} />
-      </SwiperSlide>
-    ));
-  
-    return (
-      <div className="w-full mt-5" ref={containerRef}>
-        <Swiper
-          navigation
-          pagination={false}
-          autoplay={{ delay: 10000 }}
-          spaceBetween={0}
-          slidesPerView={slidesPerView}
-        >
-          {cardWeeks}
-        </Swiper>
-      </div>
-    );
-  }
+    }
+  }, [slidesPerView]);
+
+  const cardWeeks = Array.from({ length: 7 }, (_, index) => (
+    <SwiperSlide key={index} className="h-screen">
+      <CardWeek dataCityClimaWeek={props.dataCityClimaWeek.hour[0]} index={index} />
+    </SwiperSlide>
+  ));
+
+  return (
+    <div className="w-full mt-5" ref={containerRef}>
+      <Swiper
+        navigation
+        pagination={false}
+        autoplay={{ delay: 10000 }}
+        spaceBetween={0}
+        slidesPerView={slidesPerView}
+      >
+        {cardWeeks}
+      </Swiper>
+    </div>
+  );
+}

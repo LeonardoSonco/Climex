@@ -72,7 +72,7 @@ export default function Paises() {
     }
   }, [slidesPerView]);
 
-  console.log(climates['London'])
+
 
   const cardPaises = Array.from({ length: 7 }, (_, index) => (
     <SwiperSlide key={index} className="h-screen">
@@ -81,7 +81,7 @@ export default function Paises() {
   ));
 
   return (
-    <section className="grid grid-cols-2 my-8 bg-slate-50">
+    <section className="grid grid-cols-2 mt-8 pb-8 bg-slate-50">
       <div className="text-center  pt-7">
         <h2 className="text-5xl font-semibold pb-5">
           Climates of most visited cities
@@ -90,7 +90,7 @@ export default function Paises() {
           Some climates to give you an idea of what its like in other places
         </p>
       </div>
-      <div className="w-full mt-5" ref={containerRef}>
+      <div style={{textAlign:"-webkit-center"}} className="w-full mt-5 " ref={containerRef}>
         <Swiper
           navigation
           pagination={false}

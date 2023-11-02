@@ -2,7 +2,7 @@ export default function CardPaises(props) {
   var dataCityClima = "";
   let backgroundImage = "";
   if (props.climates) {
-    console.log(props.climates);
+  
     dataCityClima = {
       name: props.climates.location?.name || "",
       temp: Math.round(props.climates.current?.temp_c) || 0,
