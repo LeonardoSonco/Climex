@@ -20,7 +20,7 @@ export default function CardWeek(props) {
   }
 
   return (
-    <div className="w-auto bg-slate-100 flex flex-col items-center mt-3 ml-5 mb-5 rounded-3xl">
+    <div className="w-auto bg-slate-100 flex flex-col items-center mt-3 mx-3 mb-5 rounded-3xl">
       <img src={dataHours.image} alt="" className="w-36 py-2" />
       <div className="flex gap-3 text-lg font-medium">
         <span className="bg-violet-950 text-white py-2 mt-2 mb-4 px-4 rounded-3xl text-xl font-semibold">

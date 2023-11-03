@@ -38,7 +38,7 @@ export default function CardPaises(props) {
         <img src={dataCityClima.image} alt="" className="w-36" />
         <div className="flex flex-col  items-center bg-blue-900 bg-opacity-70 px-2 py-1 mb-2  font-medium w-full">
           <div className="flex align-middle gap-2">
-            <span class="material-symbols-outlined">schedule</span>
+            <span className="material-symbols-outlined">schedule</span>
             <span> {dataCityClima.time}</span>
           </div>
           <h2>

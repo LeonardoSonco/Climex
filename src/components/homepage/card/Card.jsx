@@ -14,7 +14,7 @@ export default function Card(props) {
   }
 
   let day = ''
-  console.log(index)
+  
   if(index === 0){
     day= "Today"
   }else if(index=== 1){
@@ -23,10 +23,6 @@ export default function Card(props) {
     day= "After Tomorrow"
   }
  
-  console.log(props)
-
-
-
 
   
   return (

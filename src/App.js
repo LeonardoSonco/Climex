@@ -11,6 +11,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   const [climate, setClimate] = useState([]);
+  const [location, setLocation] = useState("Alegrete");
 
   useEffect(() => {
     async function lookClimate() {
@@ -20,7 +21,7 @@ function App() {
         const response = await axios.get(endpoint, {
           params: {
             key: "39a108a7f5244eeda04174349230810",
-            q: "Alegrete",
+            q: location,
             days: "8",
           },
         });
@@ -32,7 +33,9 @@ function App() {
     }
 
     lookClimate();
-  }, []);
+  }, [location]);
+
+  console.log(climate)
 
   const dataCityClimaDay = {
     name: climate.location?.name || "",
@@ -42,20 +45,22 @@ function App() {
     humidity: climate.current?.humidity || 0,
     cloud: climate.current?.cloud || 0,
     day: climate.current?.last_updated.split(" ")[0] || 0,
+    country: climate.location?.country || "",
   };
 
- 
-
   const dataCityClimaWeek = {
-    hour: climate.forecast?.forecastday || ""
-  }
-  
+    hour: climate.forecast?.forecastday || "",
+  };
+
+  const handleLocation = (citySearch) => {
+    setLocation(citySearch);
+  };
 
   return (
     <div>
-      <Header />
+      <Header handleLocation={handleLocation} />
       <Destaque dataCityClimaDay={dataCityClimaDay} />
-      <Semana dataCityClimaWeek={dataCityClimaWeek}/>
+      <Semana dataCityClimaWeek={dataCityClimaWeek} />
       <Paises />
       <Footer />
     </div>

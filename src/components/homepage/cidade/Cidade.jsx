@@ -13,6 +13,7 @@ export default function Cidade(props) {
     <div>
       <div className="text-center">
         <h3 className="text-6xl text-white font-bold">{props.dataCity.name}</h3>
+        <h5 className="text-lg text-white font-bold pt-2">{props.dataCity.country}</h5>
         <div className="flex justify-around my-3">
           <span className="text-xl text-white font-medium">{date}</span>
         </div>
@@ -43,6 +44,7 @@ export default function Cidade(props) {
           <span>Humidity {props.dataCity.humidity}%</span>
         </div>
       </div>
+     
     </div>
   );
 }

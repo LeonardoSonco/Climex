@@ -16,7 +16,7 @@ export default function Semana(props) {
     const handleResize = () => {
       if (containerRef.current) {
         const containerWidth = containerRef.current.clientWidth;
-        const cardWeekWidth = 225; // Largura aproximada de um CardWeek
+        const cardWeekWidth = 245; // Largura aproximada de um CardWeek
         const newSlidesPerView = Math.floor(containerWidth / cardWeekWidth);
         if (newSlidesPerView !== slidesPerView) {
           setSlidesPerView(newSlidesPerView);
@@ -41,7 +41,7 @@ export default function Semana(props) {
   ));
 
   return (
-    <div className="w-full mt-5" ref={containerRef}>
+    <div className="w-full mt-5 mx-auto" ref={containerRef}>
       <Swiper
         navigation
         pagination={false}
